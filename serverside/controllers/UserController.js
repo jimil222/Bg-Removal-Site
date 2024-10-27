@@ -14,6 +14,7 @@ const clerkWebhooks = async(req,res)=>{
             "svix-timestamp":req.headers["svix-timestamp"],
             "svix-signature":req.headers["svix-signature"]
         })
+        console.log("Webhook received:", req.body);
         const {data,type} = req.body
         switch (type) {
             case "user.created":{
